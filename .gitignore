@@ -1,0 +1,81 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs, caches, and temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# Local databases and SQLite sidecars
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Local review, dump, and merge artifacts
+/a[0-9]*.txt
+/tree*.txt
+/dump*.txt
+/PATCH_NOTES.md
+/manifest.sha256
+/*.zip
+/*.tar.gz
+
+# TeenModo runtime volume
+#
+# Ignore downloaded models, manifests, engine caches, generated Compose data,
+# inputs, outputs, metrics, responses, media, and other runtime-created files.
+#
+# Git does not track empty directories, so only .gitkeep placeholders are
+# allowed below volume/.
+volume/**
+!volume/**/
+!volume/**/.gitkeep

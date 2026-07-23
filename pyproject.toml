@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teenmodo"
+version = "0.4.0"
+description = "Resultity Pre-Node hardware qualification for local AI engines and models"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+  { name = "Resultity contributors" },
+]
+keywords = [
+  "ai",
+  "benchmark",
+  "docker",
+  "gpu",
+  "hardware",
+  "inference",
+  "ollama",
+  "resultity",
+  "telemetry",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: System :: Benchmark",
+]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "httpx>=0.27,<1",
+  "platformdirs>=4,<5",
+  "psutil>=6,<8",
+  "pydantic>=2.8,<3",
+  "PyYAML>=6,<7",
+  "rich>=13.8,<16",
+  "typer>=0.15,<1",
+  "uvicorn>=0.30,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "huggingface-hub>=0.34,<2",
+  "pytest>=8,<9",
+]
+
+[project.urls]
+Homepage = "https://resultity.com"
+Documentation = "https://docs.resultity.com"
+
+[project.scripts]
+teenmodo = "teenmodo.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["teenmodo*", "controller*", "engines*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
